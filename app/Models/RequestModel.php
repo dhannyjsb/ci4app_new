@@ -49,7 +49,7 @@ class RequestModel extends Model
 
     public function getData()
     {
-        $this->orderBy('id', 'desc');
+        $this->orderBy('id', 'asc');
         return $this->findAll();
     }
 }
