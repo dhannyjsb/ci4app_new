@@ -7,13 +7,16 @@ class Request_model extends Model
      
     public function getRequest()
     {
-        return $this->findAll();
+        // return $this->findAll();
+        
+        $this->orderBy('id', 'desc');
     }
 
     public function saveRequest($data)
     {
-        $builder = $this->db->table($this->table);
-        return $builder->insert($data);
+        // $builder = $this->db->table($this->table);
+        // return $builder->insert($data);
+        $this->insert($data);
     }
  
 }
