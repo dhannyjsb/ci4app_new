@@ -15,7 +15,7 @@ class RequestModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'id'
+        'id', 'kode_toko', 'nama_toko', 'nik', 'nama', 'nama_request', 'tgl_request', 'status'
     ];
 
     // Dates
