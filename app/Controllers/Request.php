@@ -30,7 +30,7 @@ class Request extends Controller
 
     public function add()
     {
-        $model = new Request_model();
+        $model = new RequestModel();
         $today =  date('d-m-Y');
         $data = array(
 
@@ -43,7 +43,7 @@ class Request extends Controller
             'status'        => 'PROCESS'
         );
 
-        $model->saveRequest($data);
+        $model->saveData($data);
         echo '<script>
                 alert("Request Anda Sedang Diproses");
                 window.location="' . base_url('/request') . '"
