@@ -1,17 +1,20 @@
-<?php namespace App\Controllers;
- 
+<?php
+
+namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\Request_model;
- 
+use App\Models\RequestModel;
+
 class Request extends Controller
 {
     public function index()
     {
-        $model = new Request_model();
-        $data['request'] = $model->getRequest();
+        $model = new RequestModel();
+        $data['request'] = $model->getData();
         echo view('templates/header');
         echo view('templates/navbar');
-        echo view('pages/tambah_data',$data);
+        echo view('pages/tambah_data', $data);
         echo view('templates/footer');
     }
 
@@ -36,7 +39,7 @@ class Request extends Controller
             'nik'           => $this->request->getPost('nik'),
             'nama'          => $this->request->getPost('nama'),
             'nama_request'  => $this->request->getPost('nama_request'),
-            'tgl_request'   => $today  ,
+            'tgl_request'   => $today,
             'status'        => 'PROCESS'
         );
 
